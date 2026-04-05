@@ -19,7 +19,9 @@ public class Employee {
         setSalary(salary);
     }
 
-    // Геттеры
+    /**
+     * Геттеры
+     */
     public int getId() {
         return id;
     }
@@ -44,7 +46,9 @@ public class Employee {
         return salary;
     }
 
-    // Сеттеры для отдела и зарплаты
+    /**
+     * Сеттеры для отдела и зарплаты
+     */
     public void setDepartment(int department) {
         if (department < 1 || department > 5) {
             throw new IllegalArgumentException("Отдел должен быть от 1 до 5");
@@ -59,7 +63,9 @@ public class Employee {
         this.salary = salary;
     }
 
-    // Бухгалтерское сравнение(equals)
+    /**
+     * Бухгалтерское сравнение(equals)
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -73,7 +79,9 @@ public class Employee {
         return Objects.hash(salary);
     }
 
-    // Полный вывод информации
+    /**
+     * Полный вывод информации
+     */
     @Override
     public String toString() {
         return String.format("ID: %d | ФИО: %s %s %s | Отдел: %d | Зарплата: %.2f",

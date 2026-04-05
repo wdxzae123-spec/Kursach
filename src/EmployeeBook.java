@@ -9,7 +9,9 @@ public class EmployeeBook {
         employees = new Employee[MAX_EMPLOYEES];
     }
 
-    // Получить список всех сотрудников
+    /**
+     * Получить список всех сотрудников
+     */
     public void printAllEmployees() {
         System.out.println("Список всех сотрудников:");
         for (Employee emp : employees) {
@@ -19,7 +21,9 @@ public class EmployeeBook {
         }
     }
 
-    // Подсчитать среднюю зарплату
+    /**
+     * Подсчитать среднюю зарплату
+     */
     public double calculateAverageSalary() {
         double sum = 0;
         int count = 0;
@@ -31,7 +35,9 @@ public class EmployeeBook {
         return count == 0 ? 0 : sum / count;
     }
 
-    // Подсчитать налоги
+    /**
+     * Подсчитать налоги
+     */
     public double calculateTaxes(String type) {
         double totalTax = 0;
         for (Employee emp : employees) {
@@ -55,7 +61,9 @@ public class EmployeeBook {
         return totalTax;
     }
 
-    // Индексация зарплат в отделе на процент
+    /**
+     * Индексация зарплат в отделе на процент
+     */
     public void indexSalaryByDepartment(int department, double percent) {
         if (department < 1 || department > 5) {
             throw new IllegalArgumentException("Отдел должен быть от 1 до 5");
@@ -108,7 +116,9 @@ public class EmployeeBook {
         }
     }
 
-    // Проверить, есть ли сотрудник в массиве
+    /**
+     * Проверить, есть ли сотрудник в массиве
+     */
     public boolean containsEmployee(Employee employee) {
         for (Employee emp : employees) {
             if (emp == null) break;
@@ -119,7 +129,9 @@ public class EmployeeBook {
         return false;
     }
 
-    // Добавить сотрудника в первую свободную ячейку
+    /**
+     * Добавить сотрудника в первую свободную ячейку
+     */
     public boolean addEmployee(Employee employee) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
@@ -130,7 +142,9 @@ public class EmployeeBook {
         return false;
     }
 
-    //Получить сотрудника по id
+    /**
+     * Получить сотрудника по id
+     */
     public Employee getEmployeeById(int id) {
         for (Employee emp : employees) {
             if (emp == null) break;

@@ -27,41 +27,57 @@ public class Main {
         System.out.println("emp11: " + book.addEmployee(emp11));
         System.out.println();
 
-        // Список всех сотрудников
+        /**
+         * Список всех сотрудников
+         */
         book.printAllEmployees();
         System.out.println();
 
-        // Средняя зарплата
+        /**
+         * Средняя зарплата
+         */
         System.out.printf("Средняя зарплата: %.2f%n", book.calculateAverageSalary());
         System.out.println();
 
-        // Налоги
+        /**
+         * Налоги
+         */
         System.out.printf("Налоги (пропорциональные): %.2f%n", book.calculateTaxes("PROPORTIONAL"));
         System.out.printf("Налоги (прогрессивные): %.2f%n", book.calculateTaxes("PROGRESSIVE"));
         System.out.println();
 
-        // Индексация зарплат в отделе 1 на 10%
+        /**
+         *  Индексация зарплат в отделе 1 на 10%
+         */
         System.out.println("Индексация зарплат в отделе 1 на 10%:");
         book.indexSalaryByDepartment(1, 10);
         book.printAllEmployees(); // покажем изменения
         System.out.println();
 
-        // Поиск первого сотрудника в отделе 2 с зарплатой > 210
+        /**
+         * Поиск первого сотрудника в отделе 2 с зарплатой > 210
+         */
         System.out.println("Поиск в отделе 2 с зарплатой > 210:");
         book.findFirstEmployeeByDepartmentAndSalary(2, 210);
         System.out.println();
 
-        // Поиск первых 3 сотрудников с зарплатой < 200
+        /**
+         * Поиск первых 3 сотрудников с зарплатой < 200
+         */
         System.out.println("Первые 3 сотрудника с зарплатой < 200:");
         book.findFirstEmployeesBySalary(200, 3);
         System.out.println();
 
-        // Проверка наличия сотрудника по зарплате
+        /**
+         * Проверка наличия сотрудника по зарплате
+         */
         Employee searchEmp = new Employee("", "", "", 1, 120); // зарплата 120
         System.out.println("Сотрудник с зарплатой 120 присутствует? " + book.containsEmployee(searchEmp));
         System.out.println();
 
-        // Получение сотрудника по id
+        /**
+         * Получение сотрудника по id
+         */
         System.out.println("Поиск по id=5:");
         Employee found = book.getEmployeeById(5);
         if (found != null) {
