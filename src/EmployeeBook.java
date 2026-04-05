@@ -1,4 +1,8 @@
-public class EmployeeBook {private final Employee[] employees;
+public class EmployeeBook {
+
+    private static final String TAX_TYPE_PROPORTIONAL = "PROPORTIONAL";
+    private static final String TAX_TYPE_PROGRESSIVE = "PROGRESSIVE";
+    private final Employee[] employees;
     private static final int MAX_EMPLOYEES = 10;
 
     public EmployeeBook() {
@@ -35,10 +39,10 @@ public class EmployeeBook {private final Employee[] employees;
             double salary = emp.getSalary();
             double taxRate;
             switch (type.toUpperCase()) {
-                case "PROPORTIONAL":
+                case TAX_TYPE_PROPORTIONAL:
                     taxRate = 0.13;
                     break;
-                case "PROGRESSIVE":
+                case TAX_TYPE_PROGRESSIVE:
                     if (salary <= 150) taxRate = 0.13;
                     else if (salary <= 350) taxRate = 0.17;
                     else taxRate = 0.21;
@@ -57,13 +61,20 @@ public class EmployeeBook {private final Employee[] employees;
             throw new IllegalArgumentException("Отдел должен быть от 1 до 5");
         }
         for (Employee emp : employees) {
-            if (emp == null) continue;
-            if (emp.getDepartment() != department) continue;
-            if (percent == 0) continue;
+            if (emp == null) {
+                continue;
+            }
+            if (emp.getDepartment() != department) {
+                continue;
+            }
+            if (percent == 0) {
+                continue;
+            }
             double newSalary = emp.getSalary() * (1 + percent / 100);
             emp.setSalary(newSalary);
         }
     }
+
     public void findFirstEmployeeByDepartmentAndSalary(int department, double wage) {
         if (department < 1 || department > 5) {
             throw new IllegalArgumentException("Отдел должен быть от 1 до 5");
@@ -79,6 +90,7 @@ public class EmployeeBook {private final Employee[] employees;
         }
         System.out.println("Сотрудник не найден.");
     }
+
     public void findFirstEmployeesBySalary(double wage, int employeeNumber) {
         int found = 0;
         int index = 0;
@@ -96,7 +108,7 @@ public class EmployeeBook {private final Employee[] employees;
         }
     }
 
-    // Проверить, есть ли сотрудник в массиве (equals)
+    // Проверить, есть ли сотрудник в массиве
     public boolean containsEmployee(Employee employee) {
         for (Employee emp : employees) {
             if (emp == null) break;

@@ -1,6 +1,7 @@
 import java.util.Objects;
 
-public class Employee { private static int idCounter = 1;
+public class Employee {
+    private static int idCounter = 1;
 
     private final int id;
     private String firstName;
@@ -9,7 +10,6 @@ public class Employee { private static int idCounter = 1;
     private int department;      // от 1 до 5
     private double salary;       // от 50 до 450
 
-    // Конструктор
     public Employee(String firstName, String lastName, String patronymic, int department, double salary) {
         this.id = idCounter++;
         this.firstName = firstName;
@@ -43,6 +43,7 @@ public class Employee { private static int idCounter = 1;
     public double getSalary() {
         return salary;
     }
+
     // Сеттеры для отдела и зарплаты
     public void setDepartment(int department) {
         if (department < 1 || department > 5) {
@@ -50,6 +51,7 @@ public class Employee { private static int idCounter = 1;
         }
         this.department = department;
     }
+
     public void setSalary(double salary) {
         if (salary < 50 || salary > 450) {
             throw new IllegalArgumentException("Зарплата должна быть в диапазоне 50–450");
@@ -78,7 +80,9 @@ public class Employee { private static int idCounter = 1;
                 id, lastName, firstName, patronymic, department, salary);
     }
 
-    // Краткий вывод (имя и зарплата)
+    /**
+     * Выводит краткую информацию о сутруднике( Имя и зарплату)
+     */
     public void printShortInfo() {
         System.out.printf("Сотрудник: %s %s, зарплата: %.2f%n", firstName, lastName, salary);
     }

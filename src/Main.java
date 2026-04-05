@@ -57,7 +57,7 @@ public class Main {
         System.out.println();
 
         // Проверка наличия сотрудника по зарплате
-        Employee searchEmp = new Employee("", "", "", 2, 120); // зарплата 120
+        Employee searchEmp = new Employee("", "", "", 1, 120); // зарплата 120
         System.out.println("Сотрудник с зарплатой 120 присутствует? " + book.containsEmployee(searchEmp));
         System.out.println();
 
